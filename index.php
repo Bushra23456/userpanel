@@ -42,93 +42,70 @@ include("header.php");
 
 							<br>
 
-							<h2 class="h2">Featured Products</h2>
+							<h2 class="h2">Category Availabale</h2>
 
 							<!-- Products -->
 							<section class="tiles">
-								<article class="style1">
-									<span class="image">
-										<img src="images/product-1-720x480.jpg" alt="" />
+								<?php
+										$sql = "select * from category order by id asc limit 3";
+										$result = mysqli_query($conn, $sql);
+										while($rows = mysqli_fetch_assoc($result)){
+											?>
+											<article class="style1">
+												<span class="image">
+                                            
+                                            <?php
+                                                echo "<img src=\"../../admin/images/category/{$rows['categoryImage']}\" height=300px width=300px>"
+												
+                                             ?>
+										
 									</span>
 									<a href="product-details.html">
-										<h2>Lorem ipsum dolor sit amet, consectetur</h2>
+										<h2><?php echo $rows['categoryName']?></h2>
 										
 										<p><del>$19.00</del> <strong>$19.00</strong></p>
-
+										
 										<p>Vestibulum id est eu felis vulputate hendrerit uspendisse dapibus turpis in </p>
 									</a>
 								</article>
-								<article class="style2">
-									<span class="image">
-										<img src="images/product-2-720x480.jpg" alt="" />
-									</span>
-									<a href="product-details.html">
-										<h2>Lorem ipsum dolor sit amet, consectetur</h2>
-										
-										<p><del>$19.00</del> <strong>$19.00</strong></p>
-
-										<p>Vestibulum id est eu felis vulputate hendrerit uspendisse dapibus turpis in </p>
-									</a>
-								</article>
-								<article class="style3">
-									<span class="image">
-										<img src="images/product-3-720x480.jpg" alt="" />
-									</span>
-									<a href="product-details.html">
-										<h2>Lorem ipsum dolor sit amet, consectetur</h2>
-										
-										<p><del>$19.00</del> <strong>$19.00</strong></p>
-
-										<p>Vestibulum id est eu felis vulputate hendrerit uspendisse dapibus turpis in </p>
-									</a>
-								</article>
-
-								<article class="style4">
-									<span class="image">
-										<img src="images/product-4-720x480.jpg" alt="" />
-									</span>
-									<a href="product-details.html">
-										<h2>Lorem ipsum dolor sit amet, consectetur</h2>
-										
-										<p><del>$19.00</del> <strong>$19.00</strong></p>
-
-										<p>Vestibulum id est eu felis vulputate hendrerit uspendisse dapibus turpis in </p>
-									</a>
-								</article>
-
-								<article class="style5">
-									<span class="image">
-										<img src="images/product-5-720x480.jpg" alt="" />
-									</span>
-									<a href="product-details.html">
-										<h2>Lorem ipsum dolor sit amet, consectetur</h2>
-										
-										<p><del>$19.00</del> <strong>$19.00</strong></p>
-
-										<p>Vestibulum id est eu felis vulputate hendrerit uspendisse dapibus turpis in </p>
-									</a>
-								</article>
-
-								<article class="style6">
-									<span class="image">
-										<img src="images/product-6-720x480.jpg" alt="" />
-									</span>
-									<a href="product-details.html">
-										<h2>Lorem ipsum dolor sit amet, consectetur</h2>
-										
-										<p><del>$19.00</del> <strong>$19.00</strong></p>
-
-										<p>Vestibulum id est eu felis vulputate hendrerit uspendisse dapibus turpis in </p>
-									</a>
-								</article>
+								
+								<?php } ?>
 							</section>
 
-							<p class="text-center"><a href="products.html">More Books &nbsp;<i class="fa fa-long-arrow-right"></i></a></p>
+							<p class="text-center"><a href="allcategory.php">More Books &nbsp;<i class="fa fa-long-arrow-right"></i></a></p>
 							
 							<br>
 
-							<h2 class="h2">Testimonials</h2>
-							
+							<h2 class="h2">Authors</h2>
+							<section class="tiles">
+								<?php
+										$sql = "select * from authors order by id asc limit 3";
+										$result = mysqli_query($conn, $sql);
+										while($rows = mysqli_fetch_assoc($result)){
+											?>
+											<article class="style1">
+												<span class="image">
+                                            
+                                            <?php
+                                                echo "<img src=\"../../admin/images/authors/{$rows['image']}\" height=300px width=300px>"
+												
+                                             ?>
+										
+									</span>
+									<a href="product-details.html">
+										<h2><?php echo $rows['author_name']?></h2>
+										
+										<p><strong><?php echo $rows['dob']?></strong></p>
+										<p><strong><?php echo $rows['location']?></strong></p>
+
+										
+										<p>Vestibulum id est eu felis vulputate hendrerit uspendisse dapibus turpis in </p>
+									</a>
+								</article>
+								
+								<?php } ?>
+							</section>
+							<p class="text-center"><a href="allauthor.php">More Books &nbsp;<i class="fa fa-long-arrow-right"></i></a></p>
 							<div class="row">
 								<div class="col-sm-6 text-center">
 									<p class="m-n"><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt delectus mollitia, debitis architecto recusandae? Quidem ipsa, quo, labore minima enim similique, delectus ullam non laboriosam laborum distinctio repellat quas deserunt voluptas reprehenderit dignissimos voluptatum deleniti saepe. Facere expedita autem quos."</em></p>
