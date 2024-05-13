@@ -60,7 +60,8 @@ include("header.php");
                                              ?>
 										
 									</span>
-									<a href="product-details.html">
+									<a href="products.php?=id=<?php echo $rows['id']?>">
+									
 										<h2><?php echo $rows['categoryName']?></h2>
 										
 										<p><del>$19.00</del> <strong>$19.00</strong></p>
@@ -92,7 +93,7 @@ include("header.php");
                                              ?>
 										
 									</span>
-									<a href="product-details.html">
+									<a href="products.php?=id=<?php echo $rows['id']?>">
 										<h2><?php echo $rows['author_name']?></h2>
 										
 										<p><strong><?php echo $rows['dob']?></strong></p>
